@@ -1,0 +1,39 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Year",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Spending_USD",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 3
+			},
+			{
+				"name": "Life_Expectancy",
+				"type": "decimal",
+				"precision": 4,
+				"scale": 1
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CountrySpending"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
