@@ -13,7 +13,17 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "select1"
+				},
+				{
+					"name": "cast1"
+				},
+				{
+					"name": "Green"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          id as short,",
@@ -74,7 +84,19 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 select(mapColumn(",
+				"          each(match(/* All input columns */ true()),",
+				"               /* Input name */ $$ = $$)",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 cast(output(",
+				"          id as short",
+				"     ),",
+				"     errors: true) ~> cast1",
+				"cast1 split(ERROR_FUNCTION(''),",
+				"     disjoint: false) ~> Green@(, )"
 			]
 		}
 	}
