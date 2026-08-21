@@ -95,8 +95,8 @@
 				"          id as short",
 				"     ),",
 				"     errors: true) ~> cast1",
-				"cast1 split(ERROR_FUNCTION(''),",
-				"     disjoint: false) ~> Green@(, )"
+				"cast1 split(eyeColor==='Green',",
+				"     disjoint: false) ~> Green@(Green, )"
 			]
 		}
 	}
