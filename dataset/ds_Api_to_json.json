@@ -1,0 +1,18 @@
+{
+	"name": "ds_Api_to_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_dummyjson",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "users"
+			}
+		},
+		"schema": {}
+	}
+}
