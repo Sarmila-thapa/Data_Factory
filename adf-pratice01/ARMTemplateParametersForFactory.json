@@ -25,6 +25,9 @@
 		},
 		"LS_AzureDataLakeStorage_properties_typeProperties_url": {
 			"value": "https://sarmila01.dfs.core.windows.net/"
+		},
+		"LS_dummyjson_properties_typeProperties_url": {
+			"value": "https://dummyjson.com"
 		}
 	}
 }
