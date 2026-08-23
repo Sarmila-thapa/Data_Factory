@@ -1,0 +1,20 @@
+{
+	"name": "DS_Users_JSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AzureBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "users.json",
+				"folderPath": "saru/users",
+				"container": "workshop"
+			}
+		},
+		"schema": {}
+	}
+}
